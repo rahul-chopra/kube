@@ -2,11 +2,7 @@ pipeline {
 
   agent {
 
-    kubernetes {
-
-      label 'my-kubernetes-agent'
-
-    }
+    kubernetes 
 
   }
 
@@ -16,7 +12,7 @@ pipeline {
       steps {
         kubernetesDeploy(
           configs: 'kubernetes/dep1.yaml',
-          kubeconfigId: 'my-kubeconfig'
+          
         )
 
       }
