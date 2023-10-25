@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent kubernetes 
     environment {
         PROJECT_ID = 'forward-emitter-395618'
         CLUSTER_NAME = 'autopilot-cluster-1'
