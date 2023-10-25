@@ -1,19 +1,28 @@
 pipeline {
-    agent any 
-    environment {
-        PROJECT_ID = 'forward-emitter-395618'
-        CLUSTER_NAME = 'autopilot-cluster-1'
-        LOCATION = 'us-east1'
-        CREDENTIALS_ID = 'SECRET_TOKEN'
+
+  agent {
+
+    kubernetes {
+
+      label 'my-kubernetes-agent'
+
     }
-    stages {
-stage('Build') {
-            steps{
-                script {
-                      kubernetesDeploy(configs: "dep1.yaml")
-                }
-                
-            }
-        }
-    }   
+
+  }
+
+  stages {
+ 
+    stage('Deploy to Kubernetes') {
+      steps {
+        kubernetesDeploy(
+          configs: 'kubernetes/dep1.yaml',
+          kubeconfigId: 'my-kubeconfig'
+        )
+
+      }
+
+    }
+
+  }
+
 }
