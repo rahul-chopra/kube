@@ -6,6 +6,7 @@ pipeline {
         LOCATION = 'us-east1'
         CREDENTIALS_ID = 'SECRET_TOKEN'
     }
+    stages {
 stage('Build') {
             steps{
                 script {
@@ -15,3 +16,4 @@ stage('Build') {
             }
         }
     }   
+}
