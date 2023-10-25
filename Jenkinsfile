@@ -8,7 +8,9 @@ pipeline {
     }
 stage('Build') {
             steps{
-                kubectl apply -f dep1.yaml
+                script {
+                      kubernetesDeploy(configs: "dep1.yaml")
+                }
                 
             }
         }
