@@ -4,7 +4,7 @@ pipeline {
 
     kubernetes {
 
-      label 'hello'
+      
 
     }
 
