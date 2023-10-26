@@ -10,8 +10,7 @@ pipeline {
         script {
         kubernetesDeploy(
           configs: 'kube/dep1.yaml',
-          kubeconfigId: 'my-kubeconfig'
-        )
+          )
       }
       }
     }
