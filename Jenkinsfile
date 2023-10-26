@@ -8,7 +8,7 @@ pipeline {
     stage('Deploy to Kubernetes') {
       steps {
         kubernetesDeploy(
-          configs: 'kubernetes/dep1.yaml',
+          configs: 'dep1.yaml',
           kubeconfigId: 'my-kubeconfig'
         )
       }
