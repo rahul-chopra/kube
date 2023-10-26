@@ -1,18 +1,4 @@
-apiVersion: apps/v1
-kind: Deployment
+kind: Namespace
+apiVersion: v1
 metadata:
-  name: dep1
-  labels:
-    app: nginx
-spec:
-  replicas: 2
-    template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: dep-nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
+  name: test
