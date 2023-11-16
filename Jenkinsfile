@@ -1,5 +1,8 @@
 pipeline {
-  agent any
+  agent {
+    kubernetes {   
+    }
+  }
 
   stages {   
     stage('Checkout Source') {
