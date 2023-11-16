@@ -14,6 +14,7 @@ pipeline {
       steps {
          kubernetesDeploy(
           configs: 'kube/dep1.yaml',
+          kubeconfigID: 'secret_token_jenkin_k8'
           )
       }
     }
